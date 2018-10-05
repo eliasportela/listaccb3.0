@@ -1,11 +1,11 @@
 <template>
-	<div>
-		<container>
-			<div class="w3-center boas-vindas">
+	<div class="w3-text-white">
+    <top-bar home="true" voltar=""></top-bar>
+    <container>
+      <div class="w3-center boas-vindas">
 				<img src="../assets/logo.png" class="img-logo">
-				<h4 class="">Lista CCB irá te auxilar a encontrar listas de batismo e diversos da Congregação Cristã no Brasil</h4>
-				<router-link :to="'estados'" class="w3-button w3-teal w3-margin-top">
-					<i class="fa fa-search"></i>
+				<p class="boldbold">Lista CCB irá te auxilar a encontrar listas de batismo e diversos da Congregação Cristã no Brasil</p>
+				<router-link :to="'estados'" class="w3-button w3-round w3-border w3-margin-top">
 					BUSCAR LISTAS
 				</router-link>
 			</div>
@@ -20,26 +20,31 @@
 <script>
 
 import Container from "./commons/Container.vue"
+import TopBar from './commons/TopBar.vue'
+
 export default {
-	components:{Container},
+	components:{Container,TopBar},
 	name: 'Home',
 	data () {
 		return {
 			msg: 'Welcome to Your Vue.js App'
 		}
-	}
+	},
+  beforeCreate() {
+    document.getElementById("body").classList.add("home");
+  }
 }
 </script>
 
 <style scoped>
 .boas-vindas{
 	font-weight: bold;
+  margin-top: 30px;
 }
 
 .title{
-	margin-bottom: 50px;
-	color: #fff;
-	font-size: 0.8em
+	margin-bottom: 25px;
+	font-size: 0.9em
 }
 
 .img-logo{

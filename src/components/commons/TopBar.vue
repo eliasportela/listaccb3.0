@@ -1,22 +1,25 @@
 <template>
-	<div class="w3-top">
-		<div class="w3-bar w3-text-white w3-padding" :class="{'w3-teal':menu}">
-			<router-link to="/" class="w3-bar-item w3-button title">LISTA CCB</router-link>
-			<button class="w3-bar-item w3-button w3-border w3-round w3-right" @click="abrirMenu">
+	<div class="w3-top" :class="{'w3-teal':!home}">
+		<div class="w3-bar" :class="{'w3-teal':menu}">
+			<router-link to="/" class="w3-bar-item w3-button title" v-show="!voltar">LISTA CCB</router-link>
+			<a class="w3-bar-item w3-button" v-show="voltar" @click="voltarHistory">
+        <i class="fa fa-chevron-left"></i>
+      </a>
+			<button class="w3-bar-item w3-button w3-right" @click="abrirMenu">
 				<i class="fa" :class="fa"></i>
 			</button>
 		</div>
-		<div class="w3-bar-block w3-teal w3-padding w3-animate-opacity" v-show="menu">
-		  <router-link :to="'/estados'" class="w3-bar-item w3-button w3-border-bottom w3-padding-16" @click.native="abrirMenu">
+    <div class="w3-bar-block w3-margin w3-teal w3-animate-opacity" v-show="menu">
+		  <router-link :to="'/estados'" class="w3-bar-item" @click.native="abrirMenu">
 		  	LISTAS
 		  </router-link>
-		  <router-link :to="'/sobre-nos'" class="w3-bar-item w3-button w3-border-bottom w3-padding-16"@click.native="abrirMenu">
+		  <router-link :to="'/sobre-nos'" class="w3-bar-item"@click.native="abrirMenu">
 		  	SOBRE NÓS
 		  </router-link>
-		  <router-link :to="'/voluntarios'" class="w3-bar-item w3-button w3-border-bottom w3-padding-16"@click.native="abrirMenu">
+		  <router-link :to="'/voluntarios'" class="w3-bar-item"@click.native="abrirMenu">
 		  	VOLUNTÁRIOS
 		  </router-link>
-		  <router-link :to="'/login'" class="w3-bar-item w3-button w3-padding-16"@click.native="abrirMenu">
+		  <router-link :to="'/login'" class="w3-bar-item"@click.native="abrirMenu">
 		  	LOGIN
 		  </router-link>
 		</div>
@@ -25,6 +28,10 @@
 
 <script>
 	export default {
+    props: {
+      voltar: String,
+      home: String
+    },
 		data(){
 			return{
 				menu: false,
@@ -34,12 +41,11 @@
 		methods:{
 			abrirMenu(){
 				this.menu = !this.menu;
-				this.menu == true ? this.fa = 'fa-times' : this.fa = 'fa-bars'
+				this.menu === true ? this.fa = 'fa-times' : this.fa = 'fa-bars'
 			},
-			linkar(link){
-				this.menu = false;
-				router.push(link);
-			}
+			voltarHistory(){
+        window.history.back();
+      }
 		}
 	}
 </script>
@@ -51,11 +57,9 @@ i{
 }
 .title {
 	font-weight: bold;
-	font-size: 1.5em
+  line-height: 26px;
 }
-
-.sidebar {
-	width: 50%;
-	right: 0
+.w3-bar {
+  padding: 6px 8px;
 }
 </style>

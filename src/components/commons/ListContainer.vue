@@ -13,7 +13,6 @@ export default {
 
 <style scoped>
   .container-listas{
-    max-height: 70vh;
-    overflow: auto;
+
   }
 </style>

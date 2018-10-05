@@ -9,6 +9,7 @@ import Voluntarios from '@/components/Voluntarios'
 import Estados from '@/components/Estados'
 import Listas from '@/components/Listas'
 import ListaConteudo from '@/components/ListaConteudo'
+import ListaConteudoDetalhes from '@/components/ListaConteudoDetalhes'
 
 Vue.use(Router)
 
@@ -41,7 +42,7 @@ export default new Router({
       component: Voluntarios
     },
     {
-      path: '/:estado',
+      path: '/:estado/listas',
       name: 'Listas',
       component: Listas
     },
@@ -49,6 +50,11 @@ export default new Router({
       path: '/:reflista/:dslista',
       name: 'ListaConteudo',
       component: ListaConteudo
+    },
+    {
+      path: '/lista/:reflista/:dslista',
+      name: 'ListaConteudoDetalhes',
+      component: ListaConteudoDetalhes
     }
   ]
 })

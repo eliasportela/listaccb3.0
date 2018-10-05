@@ -1,8 +1,6 @@
 <template>
-  <div class="w3-margin-top container-listas">
-    <div class="w3-cell-row w3-border list">
-      <slot></slot>
-    </div>
+  <div class="w3-cell-row list">
+    <slot></slot>
   </div>
 </template>
 
@@ -14,11 +12,8 @@ export default {
 </script>
 
 <style scoped>
-  .container-listas{
-    max-height: 70vh;
-    overflow: auto;
-  }
   .list{
-    padding: 16px 16px 
+    border-top: 1px solid #f1f1f1;
+    padding: 16px;
   }
 </style>

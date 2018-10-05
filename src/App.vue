@@ -1,29 +1,28 @@
 <template>
   <div id="app">
-    
-    <top-bar></top-bar>
     <router-view/>
-    
   </div>
 </template>
 
 <script>
-import TopBar from './components/commons/TopBar.vue'
-
 export default {
-  components:{
-    TopBar
-  },
   name: 'App'
 }
 </script>
-
 <style>
-  
-  body{
-    background-image: url("./assets/bg2.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
+  a {
+    text-decoration: none;
+  }
+  .w3-button:hover {
+    background-color: inherit!important;
+  }
+  .bold{
+    font-weight: bold;
+  }
+  .title-container {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
   }
 
 </style>

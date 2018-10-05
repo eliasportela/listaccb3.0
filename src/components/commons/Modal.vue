@@ -16,7 +16,6 @@
 						</div>
 					</div>
 				</div>
-
 			</div>
 			<div class="w3-container conteudo">
 				<div class="w3-display-middle middle">
@@ -65,10 +64,7 @@
 							</div>
 						</div>
 					</div>
-					<slot></slot>
 				</div>
-
-
 			</div>
 		</div>
 	</div>
@@ -81,7 +77,7 @@ export default {
 	},
 	data(){
 		return{
-			show:true		
+			show:true
 		}
 	}
 }
@@ -105,7 +101,7 @@ export default {
 	border-bottom: 1px solid #ccc
 }
 .linha:last-child{
-	border-bottom: none;	
+	border-bottom: none;
 }
 .l1{
 	width: 10%
